@@ -21,8 +21,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.BatteryAlert
-import androidx.compose.material.icons.outlined.*
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -64,32 +63,32 @@ fun SettingsScreen(
         Triple(
             R.string.general,
             R.string.general_description,
-            Icons.Outlined.Settings
+            Icons.Default.Settings
         ) to SettingsDestination.General,
         Triple(
             R.string.updates,
             R.string.updates_description,
-            Icons.Outlined.Update
+            Icons.Default.Update
         ) to SettingsDestination.Updates,
         Triple(
             R.string.downloads,
             R.string.downloads_description,
-            Icons.Outlined.Download
+            Icons.Default.Download
         ) to SettingsDestination.Downloads,
         Triple(
             R.string.import_export,
             R.string.import_export_description,
-            Icons.Outlined.SwapVert
+            Icons.Default.SwapVert
         ) to SettingsDestination.ImportExport,
         Triple(
             R.string.advanced,
             R.string.advanced_description,
-            Icons.Outlined.Tune
+            Icons.Default.Tune
         ) to SettingsDestination.Advanced,
         Triple(
             R.string.about,
             R.string.about_description,
-            Icons.Outlined.Info
+            Icons.Default.Info
         ) to SettingsDestination.About,
     )
     NavBackHandler(navController)
@@ -157,8 +156,7 @@ fun SettingsScreen(
                         modifier = Modifier
                             .padding(paddingValues)
                             .fillMaxSize()
-                            .verticalScroll(rememberScrollState()),
-                        verticalArrangement = Arrangement.spacedBy(12.dp)
+                            .verticalScroll(rememberScrollState())
                     ) {
                         AnimatedVisibility(visible = showBatteryButton) {
                             Card(
@@ -180,7 +178,6 @@ fun SettingsScreen(
                                         .fillMaxWidth()
                                         .padding(16.dp),
                                     verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.spacedBy(16.dp)
                                 ) {
                                     Icon(
                                         imageVector = Icons.Default.BatteryAlert,
@@ -201,15 +198,12 @@ fun SettingsScreen(
                                 modifier = Modifier.clickable { navController.navigate(destination) },
                                 headlineContent = {
                                     Text(
-                                        stringResource(titleDescIcon.first),
-                                        style = MaterialTheme.typography.titleLarge
+                                        stringResource(titleDescIcon.first)
                                     )
                                 },
                                 supportingContent = {
                                     Text(
                                         stringResource(titleDescIcon.second),
-                                        style = MaterialTheme.typography.bodyMedium,
-                                        color = MaterialTheme.colorScheme.outline
                                     )
                                 },
                                 leadingContent = { Icon(titleDescIcon.third, null) }

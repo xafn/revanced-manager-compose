@@ -90,7 +90,11 @@ fun AboutSettingsScreen(
             ) {
                 Image(painter = icon, contentDescription = null)
                 Text(stringResource(R.string.app_name), style = MaterialTheme.typography.titleLarge)
-                Text( text = stringResource(R.string.version) + " " + BuildConfig.VERSION_NAME + " (" + BuildConfig.VERSION_CODE + ")", style = MaterialTheme.typography.bodyMedium)
+                Text(
+                    text = stringResource(R.string.version) + " " + BuildConfig.VERSION_NAME + " (" + BuildConfig.VERSION_CODE + ")",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.outline
+                )
                 Row(
                     modifier = Modifier.padding(top = 12.dp)
                 ) {
@@ -183,10 +187,9 @@ fun AboutSettingsScreen(
                 ListItem(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp)
                         .clickable { onClick() },
-                    headlineContent = { Text(title, style = MaterialTheme.typography.titleLarge) },
-                    supportingContent = { Text(description, style = MaterialTheme.typography.bodyMedium,color = MaterialTheme.colorScheme.outline) }
+                    headlineContent = { Text(title) },
+                    supportingContent = { Text(description) }
                 )
             }
         }

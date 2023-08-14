@@ -55,7 +55,6 @@ fun BundleItem(
 
     ListItem(
         modifier = Modifier
-            .height(64.dp)
             .fillMaxWidth()
             .clickable {
                 viewBundleDialogPage = true

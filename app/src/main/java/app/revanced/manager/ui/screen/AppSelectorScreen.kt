@@ -138,7 +138,7 @@ fun AppSelectorScreen(
                         pickApkLauncher.launch(APK_MIMETYPE)
                     },
                     leadingContent = {
-                        Box(Modifier.size(36.dp), Alignment.Center) {
+                        Box(Modifier.size(48.dp), Alignment.Center) {
                             Icon(
                                 Icons.Default.Storage,
                                 null,

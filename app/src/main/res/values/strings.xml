@@ -102,6 +102,7 @@
     <string name="system">System</string>
     <string name="light">Light</string>
     <string name="information">Information</string>
+    <string name="configure">Configure</string>
     <string name="dark">Dark</string>
     <string name="appearance">Appearance</string>
     <string name="downloaded_apps">Downloaded apps</string>
@@ -137,7 +138,7 @@
     <string name="source_replace_integrations_fail">Failed to update integrations: %s</string>
     <string name="no_patched_apps_found">No patched apps found</string>
     <string name="no_patches">No patches available to view</string>
-    <string name="patches_available">%d Patches available, tap to view</string>
+    <string name="patches_available">%d patches available</string>
     <string name="tap_on_patches">Tap on the patches to get more information about them</string>
     <string name="unsupported_app">Unsupported app</string>
     <string name="unsupported_patches">Unsupported patches</string>

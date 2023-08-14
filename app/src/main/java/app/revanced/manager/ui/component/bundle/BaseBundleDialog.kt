@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.revanced.manager.R
+import app.revanced.manager.ui.component.GroupHeader
 import app.revanced.manager.ui.component.TextInputDialog
 
 @Composable
@@ -46,11 +47,6 @@ fun BaseBundleDialog(
     modifier = Modifier
         .fillMaxWidth()
         .verticalScroll(rememberScrollState())
-        .padding(
-            start = 8.dp,
-            top = 8.dp,
-            end = 4.dp,
-        )
         .then(modifier)
 ) {
     var showNameInputDialog by rememberSaveable {
@@ -72,6 +68,9 @@ fun BaseBundleDialog(
             }
         )
     }
+
+    GroupHeader(stringResource(R.string.configure))
+
     BundleListItem(
         headlineText = stringResource(R.string.bundle_input_name),
         supportingText = name.ifEmpty { stringResource(R.string.field_not_set) },
@@ -148,19 +147,12 @@ fun BaseBundleDialog(
     }
 
     if (version != null || patchCount > 0) {
-        Text(
-            text = stringResource(R.string.information),
-            modifier = Modifier.padding(
-                horizontal = 16.dp,
-                vertical = 12.dp
-            ),
-            style = MaterialTheme.typography.labelLarge,
-            color = MaterialTheme.colorScheme.primary,
-        )
+        GroupHeader(stringResource(R.string.information))
     }
 
     if (patchCount > 0) {
         BundleListItem(
+            modifier = Modifier.clickable { onPatchesClick() },
             headlineText = stringResource(R.string.patches),
             supportingText = if (patchCount == 0) stringResource(R.string.no_patches)
             else stringResource(R.string.patches_available, patchCount),

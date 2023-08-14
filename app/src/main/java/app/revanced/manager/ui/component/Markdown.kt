@@ -86,7 +86,7 @@ fun generateMdHtml(
                             } 
                             h2 {
                                 color: #${headingColor.hexCode};
-                                font-size: 18px;
+                                font-size: 16px;
                                 font-weight: 500;
                                 line-height: 24px;
                                 letter-spacing: 0.15px;

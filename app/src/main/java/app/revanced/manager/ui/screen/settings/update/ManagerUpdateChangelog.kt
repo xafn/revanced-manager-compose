@@ -87,7 +87,7 @@ fun ManagerUpdateChangelog(
                     )
                     Text(
                         vm.changelog.version,
-                        style = MaterialTheme.typography.bodyMedium,
+                        style = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.outline,
                     )
                 }
@@ -102,7 +102,7 @@ fun ManagerUpdateChangelog(
                     )
                     Text(
                         vm.formattedDownloadCount,
-                        style = MaterialTheme.typography.bodyMedium,
+                        style = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.outline,
                     )
                 }

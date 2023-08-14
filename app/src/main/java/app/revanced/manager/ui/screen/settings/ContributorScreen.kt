@@ -90,7 +90,6 @@ fun ExpandableListCard(
                     headlineContent = {
                         Text(
                             text = processHeadlineText(title),
-                            style = MaterialTheme.typography.titleMedium
                         )
                     },
                     trailingContent = {
@@ -108,7 +107,6 @@ fun ExpandableListCard(
                     modifier = Modifier
                         .fillMaxWidth()
                         .wrapContentHeight()
-                        .padding(8.dp),
                 ) {
                     contributors.forEach {
                         AsyncImage(

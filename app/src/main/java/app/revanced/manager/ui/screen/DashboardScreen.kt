@@ -8,10 +8,10 @@ import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.outlined.Apps
+import androidx.compose.material.icons.filled.Apps
 import androidx.compose.material.icons.outlined.HelpOutline
 import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material.icons.outlined.Source
+import androidx.compose.material.icons.filled.Source
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -46,8 +46,8 @@ enum class DashboardPage(
     val titleResId: Int,
     val icon: ImageVector
 ) {
-    DASHBOARD(R.string.tab_apps, Icons.Outlined.Apps),
-    BUNDLES(R.string.tab_bundles, Icons.Outlined.Source),
+    DASHBOARD(R.string.tab_apps, Icons.Filled.Apps),
+    BUNDLES(R.string.tab_bundles, Icons.Filled.Source),
 }
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)

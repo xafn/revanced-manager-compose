@@ -15,6 +15,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Update
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
@@ -66,6 +67,7 @@ fun UpdatesSettingsScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .fillMaxWidth()
                 .padding(paddingValues)
                 .verticalScroll(rememberScrollState())
         ) {
@@ -73,27 +75,30 @@ fun UpdatesSettingsScreen(
                 onClick = onUpdateClick
             )
 
-            listItems.forEach { (title, description, onClick) ->
-                ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp)
-                        .clickable { onClick() },
-                    headlineContent = {
-                        Text(
-                            title,
-                            style = MaterialTheme.typography.titleLarge
-                        )
-                    },
-                    supportingContent = {
-                        Text(
-                            description,
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.outline
-                        )
+            ListItem(
+                modifier = Modifier.clickable { },
+                headlineContent = { Text(stringResource(R.string.update_channel)) },
+                // to be replaced with proper description
+                supportingContent = { Text(stringResource(R.string.update_channel_description)) },
+                trailingContent = {
+                    FilledTonalButton( onClick = {} ) {
+                        // to be replaced with actual channel
+                        Text(stringResource(R.string.update_channel_description))
                     }
-                )
-            }
+                }
+            )
+
+            ListItem(
+                modifier = Modifier.clickable { },
+                headlineContent = { Text(stringResource(R.string.update_notifications)) },
+                supportingContent = { Text(stringResource(R.string.update_notifications_description)) }
+            )
+
+            ListItem(
+                modifier = Modifier.clickable { onChangelogClick() },
+                headlineContent = { Text(stringResource(R.string.changelog)) },
+                supportingContent = { Text(stringResource(R.string.changelog_description)) }
+            )
         }
     }
 }
